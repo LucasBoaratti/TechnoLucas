@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'TechnoLucas_app',
     'corsheaders',
-    'django_filter',
+    'django_filters',
 ]
 
 # Configurações do DRF
@@ -71,7 +71,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Configurando as rotas que o cors vai autorizar
+# Configurando as rotas que o cors vai autorizar o acesso
 CORS_ALLOW_ORIGINS = [
     'https://localhost:5173',
     'https://localhost:5174',
@@ -103,8 +103,12 @@ WSGI_APPLICATION = 'TechnoLucas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'saep_db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'saep_db',
+        'USER': 'root',
+        'PASSWORD': 'lucas',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
