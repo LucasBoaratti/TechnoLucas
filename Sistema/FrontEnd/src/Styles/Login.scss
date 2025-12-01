@@ -1,0 +1,83 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilizando a página de login
+.paginaLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .login {
+        background-color: $cor-primaria;
+        padding: 20px;
+        border-radius: 25px;
+        color: $cor-fonte-clara;
+
+        .tituloBoasVindas {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .inputNome {
+            display: flex;
+            flex-direction: column;
+            line-height: 25px;
+
+            label {
+                font-size: 18px;
+            }
+
+            #nome {
+                height: 30px;
+                font-size: 16px;
+                padding-left: 3px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                margin-bottom: 10px;
+            }
+        }
+
+        .inputSenha {
+            display: flex;
+            flex-direction: column;
+            line-height: 25px;
+
+            label {
+                font-size: 18px;
+            }
+
+            #senha {
+                height: 30px;
+                font-size: 16px;
+                padding-left: 3px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                margin-bottom: 10px;
+            }
+        }
+
+        .botaoEntrar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            
+            .botao {
+                background-color: $cor-botoes;
+                color: $cor-fonte-escura;
+                border-radius: 15px;
+                border: none;
+                width: 100px;
+                font-size: 18px;
+                height: 30px;
+            }
+        }
+
+        .cadastrar {
+            text-align: center;
+        }
+    }
+}

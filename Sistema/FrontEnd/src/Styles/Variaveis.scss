@@ -1,0 +1,40 @@
+// Variáveis de fontes, cores etc.
+$fonte-geral: "Comic Neue", sans-serif;
+$cor-primaria: #0077b6;
+$cor-fonte-clara: #FFFFFF;
+$cor-fonte-escura: #000000;
+$cor-botoes: #ffbbe9;
+
+// Estilização global do site
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $fonte-geral;
+}
+
+// Importando a fonte principal do site
+@font-face {
+    font-family: "Comic Neue";
+    src: url('../assets/Fonts/ComicNeue-Regular.ttf') format("truetype");
+}
+
+// Estilização geral das páginas
+body {
+    background-image: url('../assets/Images/Background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+// Estilizando a opacidade do fundo
+.opacidade {
+    background: rgb(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}

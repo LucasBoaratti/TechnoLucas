@@ -23,19 +23,17 @@ tipoMovimentacao = [
 
 # ------------- Tabelas do banco -------------
 
-# Tabela de usuários, mas com o campo de email adicionado
+# Tabela de usuários
 class Usuarios(AbstractUser):
-    email = models.CharField(max_length=255, null=False)
+    pass
 
     # Função que define o nome da tabela no django admin
     def __str__(self):
         return self.username
 
-    # Definindo o nome da tabela tanto no banco de dados quanto no plural
+    # Definindo o nome da tabela no plural
     class Meta:
         verbose_name_plural = "Usuarios"
-
-        db_table = "Usuarios"
 
 # Tabela de produtos
 class Produtos(models.Model):
@@ -50,11 +48,9 @@ class Produtos(models.Model):
     def __str__(self):
         return "Produtos"
     
-    # Definindo o nome da tabela tanto no banco de dados quanto no plural
+    # Definindo o nome da tabela no plural
     class Meta:
         verbose_name_plural = "Produtos"
-
-        db_table = "Produtos"
 
 
 # Tabela de históricos
@@ -67,11 +63,9 @@ class Historicos(models.Model):
     def __str__(self):
         return "Históricos"
     
-    # Definindo o nome da tabela tanto no banco de dados quanto no plural
+    # Definindo o nome da tabela no plural
     class Meta:
         verbose_name_plural = "Históricos"
-
-        db_table = "Historicos"
 
 # Tabela de movimentações
 class Movimentacoes(models.Model):
@@ -84,8 +78,6 @@ class Movimentacoes(models.Model):
     def __str__(self):
         return "Movimentações Entrada/Saída"
     
-    # Definindo o nome da tabela tanto no banco de dados quanto no plural
+    # Definindo o nome da tabela no plural
     class Meta:
         verbose_name_plural = "Movimentações"
-
-        db_table = "Movimentacoes"

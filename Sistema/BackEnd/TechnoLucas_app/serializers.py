@@ -1,10 +1,19 @@
 from rest_framework import serializers
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from .models import Produtos, Historicos, Movimentacoes, Usuarios
 
 # Serializer de login do usuário
-class LoginUsuarioSerializer(serializers.Serializer):
+class LoginUsuarioSerializer(TokenObtainPairSerializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True) # write_only nesse campo: Evita com a que a senha criptografada seja exibida no JSON
+
+    def validate(self, attrs):
+        data = super().validate(attrs)
+
+        data["username"] = self.user.username
+        data["email"] = self.user.email
+
+        return data
 
 # Serializer de cadastro do usuário
 class CadastroUsuarioSerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 import django_filters
-from .models import Produtos, Historicos
+from .models import Produtos, Historicos, Movimentacoes
 
 # Filtros da tabela de produtos
 class ProdutosFilters(django_filters.FilterSet):
@@ -18,13 +18,22 @@ class ProdutosFilters(django_filters.FilterSet):
 
 # Filtros da tabela de históricos
 class HistoricosFilters(django_filters.FilterSet):
-    responsavel = django_filters.CharFilter(lookup_expr='icontains')
-    produto = django_filters.CharFilter(lookup_expr='icontains')
+    produto = django_filters.CharFilter(field_name="produto__nome", lookup_expr='icontains')
 
     class Meta:
         model = Historicos
 
         fields = [
-            "responsavel",
+            "produto",
+        ]
+
+# Filtros da tabela de movimentações
+class MovimentacoesFilters(django_filters.FilterSet):
+    produto = django_filters.CharFilter(field_name="produto__nome", lookup_expr='icontains')
+
+    class Meta:
+        model = Movimentacoes
+
+        fields = [
             "produto",
         ]

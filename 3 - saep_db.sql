@@ -12,21 +12,21 @@ VALUES
     ('Fernanda', 'fer@email.com', 'fer12345', '', '', 0, 1, 0, NOW(), NOW());
 
 -- Populando a tabela de produtos
-INSERT INTO Produtos (nome, tipo, quantidade_estoque, preco, descricao, responsavel_id)
+INSERT INTO Produtos (nome, tipo, quantidade_estoque, preco, descricao, responsavel)
 VALUES 
     ('Notebook HP', 'Notebook', 100, 99.99, 'Um notebook excelente para você trabalhar a vontade em sua casa ou até na empresa!', 1),
     ('SmartTV Sansung', 'SmartTV', 50, 2.999, 'SmartTV 4K UHD com acesso a aplicativos de streaming e integração com assistentes virtuais.', 1),
     ('Smartphone Motorola Edge 40', 'Smartphone', 200, 999.99, 'Smartphone moderno com câmera de alta resolução, bateria de longa duração e tela OLED.', 1);
 
 -- Populando a tabela de históricos
-INSERT INTO Historicos (data_historico, responsavel_id, produto_id)
+INSERT INTO Historicos (data_historico, responsavel, produto)
 VALUES
     ('2025-10-30', 1, 1),
     ('2025-05-25', 1, 2),
     ('2025-07-18', 1, 3);
 
 -- Populando a tabela de movimentações
-INSERT INTO Movimentacoes (quantidade_produtos, tipo_movimentacao, responsavel_id, produto_id)
+INSERT INTO Movimentacoes (quantidade_produtos, tipo_movimentacao, responsavel, produto)
 VALUES
     (10, 'Entrada', 1, 1),
     (5, 'Saída', 1, 2),

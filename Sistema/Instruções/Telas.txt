@@ -1,9 +1,0 @@
-Tela de login
-Tela de cadastro
-Tela home
-Tela de produtos {
-    Cadastro,
-    Editar,
-    Deletar (provavelmente um modal),
-}
-Tela de gestão de estoque

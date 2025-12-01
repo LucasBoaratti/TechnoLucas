@@ -1,0 +1,9 @@
+// Estilizando o cabeçalho
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.25rem;
+    background-color: #6a994e;
+    padding: 0 15px;
+}
