@@ -1,0 +1,42 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilizando a página de produtos
+.produtos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .tituloProdutos {
+        color: $cor-fonte-clara;
+        font-size: 2.5rem;
+        margin: 2.5rem 0;
+    }
+
+    .tabelaProdutos {
+        width: 78.125rem;
+        border-collapse: collapse;
+        margin-top: 2.5rem;
+        background-color: $cor-primaria;
+        border-radius: 1.5625rem;
+        padding: 15px;
+
+        .cabecalhoTabela {
+            font-size: 20px;
+
+            th {
+                border: 2px solid black;
+            }
+        }
+
+        .corpoTabela {
+            font-size: 18px;
+
+            td {
+                border: 2px solid black;
+                padding: 5px;
+            }
+        }
+    }
+}

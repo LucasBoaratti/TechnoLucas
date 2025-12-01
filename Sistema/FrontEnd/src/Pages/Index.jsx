@@ -1,3 +1,7 @@
+import { Cabecalho } from "../Components/Cabecalho";
+import { Outlet } from "react-router-dom";
+import { Rodape } from "../Components/Rodape";
+
 export function Index() {
     return (
         // Estrutura do site
@@ -11,6 +15,7 @@ export function Index() {
                 <div style={{ flex: "1" }}>
                     <Outlet/>
                 </div>
+                <Rodape/>
             </div>
         </>
     );

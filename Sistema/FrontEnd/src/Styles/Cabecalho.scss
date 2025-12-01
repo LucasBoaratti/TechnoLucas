@@ -1,9 +1,127 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
 // Estilizando o cabeçalho
 .cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 6.25rem;
-    background-color: #6a994e;
+    background-color: $cor-cabecalho-rodape;
     padding: 0 15px;
+
+    .tituloLogo {
+        background-image: linear-gradient(to right, #FFB5C0, #9D00FF);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .links {
+        display: flex;
+
+        .linksPaginas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            gap: 3.125rem;
+
+            .linkHome {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: $cor-fonte-escura;
+                cursor: pointer;
+
+                p {
+                    font-size: 1.5625rem;
+                }
+
+                .bi {
+                    font-size: 1.875rem;
+                }
+            }
+
+            .linkProdutos {
+                display: flex;
+                gap: 5px;
+                color: $cor-fonte-escura;
+                cursor: pointer;
+
+                p {
+                    font-size: 1.5625rem;
+                }
+
+                .bi {
+                    font-size: 1.875rem;
+                }
+            }
+
+            .historicos {
+                display: flex;
+                gap: 5px;
+                color: $cor-fonte-escura;
+                cursor: pointer;
+
+                p {
+                    font-size: 1.5625rem;
+                }
+
+                .bi {
+                    font-size: 1.875rem;
+                }
+            }
+
+            .movimentacoes {
+                display: flex;
+                gap: 5px;
+                color: $cor-fonte-escura;
+                cursor: pointer;
+
+                p {
+                    font-size: 1.5625rem;
+                }
+
+                .bi {
+                    font-size: 1.875rem;
+                }
+            }
+
+            li {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    background-color: black;
+                    transition: transform 0.3s ease-in;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    .usuarioAtual {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .nomeUsuario {
+            font-size: 1.5625rem;
+        }
+
+        .bi {
+            font-size: 1.5625rem;
+            cursor: pointer;
+        }
+    }
 }

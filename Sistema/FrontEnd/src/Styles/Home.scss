@@ -1,0 +1,89 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilizando a página home
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $cor-fonte-clara;
+
+    .boasVindas {
+        margin: 1.875rem 0;
+        font-size: 3.125rem;
+    }
+
+    .explicacao {
+        font-size: 1.25rem;
+        margin: 0 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .produtos {
+        margin-bottom: 1.875rem;
+    }
+
+    .tipoProdutos {
+        margin-bottom: 1.875rem;
+        
+        .produtosImagem {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 12.5rem;
+
+            .notebook {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    box-shadow: inset 0px 4px 5.625rem rgb(255, 255, 255, 0.7), 0px 4px 10px rgb(255, 255, 255, 0.7);
+                    border-radius: 1.5625rem;
+                    padding: 5px;
+                }
+
+                p {
+                    font-size: 1.5625rem;
+                }
+            }
+
+            .smartphones {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    box-shadow: 0px 4px 5.625rem rgb(255, 255, 255, 0.7);
+                    border-radius: 1.875rem;
+                }
+
+                p {
+                    font-size: 1.5625rem;
+                }
+            }
+
+            .smartTVs {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    box-shadow: 0px 4px 5.625rem rgb(255, 255, 255, 0.7), inset 0px 4px 11.875rem rgb(255, 255, 255, 0.7);
+                    padding: 5px;
+                    border-radius: 1.875rem;
+                }
+
+                p {
+                    font-size: 1.5625rem;
+                }
+            }
+        }
+    }
+}

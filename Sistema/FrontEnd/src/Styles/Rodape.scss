@@ -1,0 +1,14 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilizando o rodapé
+.rodape {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: $cor-cabecalho-rodape;
+
+    .direitos {
+        font-size: 1.25rem;
+    }
+}

@@ -1,22 +1,21 @@
 // Importando as variáveis globais
 @use './Variaveis.scss' as *;
 
-// Estilizando a página de login
-.paginaLogin {
+// Estilizando a página de cadastro
+.paginaCadastro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 
-    .login {
-        background-color: $cor-primaria;
+    .cadastro {
         padding: 1.25rem;
+        background-color: $cor-primaria;
         border-radius: 1.5625rem;
         color: $cor-fonte-clara;
 
-        .tituloBoasVindas {
-            text-align: center;
+        .tituloCadastro {
             margin-bottom: 1.25rem;
         }
 
@@ -30,6 +29,26 @@
             }
 
             #nome {
+                height: 1.875rem;
+                font-size: 1rem;
+                padding-left: 3px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                margin-bottom: 10px;
+            }
+        }
+
+        .inputEmail {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #email {
                 height: 1.875rem;
                 font-size: 1rem;
                 padding-left: 3px;
@@ -60,11 +79,30 @@
             }
         }
 
-        .botaoEntrar {
+        .inputConfirmarSenha {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #confirmarSenha {
+                height: 1.875rem;
+                font-size: 1rem;
+                padding-left: 3px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                margin-bottom: 10px;
+            }
+        }
+
+        .botaoCadastrar {
             display: flex;
             justify-content: center;
-            margin-bottom: 1.25rem;
-            
+
             .botao {
                 background-color: $cor-botoes;
                 color: $cor-fonte-escura;
@@ -73,12 +111,12 @@
                 width: 6.25rem;
                 font-size: 1.125rem;
                 height: 1.875rem;
-                margin-top: 1.875rem;
+                margin: 1.25rem 0;
                 cursor: pointer;
             }
         }
 
-        .cadastrar {
+        .possuiLogin {
             text-align: center;
         }
     }

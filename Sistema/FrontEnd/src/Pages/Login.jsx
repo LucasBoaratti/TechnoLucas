@@ -41,18 +41,21 @@ export function Login() {
         try {
             const response = await axios.post("http://127.0.0.1:8000/technolucas/login", dadosLogin);
 
-            // Salvando o nome do usuário no localStorage
-            const { nome } = response.data;
-            localStorage.setItem("nomeUsuario", nome);
+            // Salvando o nome do usuário e seu token de acesso no localStorage
+            const { username, access } = response.data;
+            localStorage.setItem("nomeUsuario", username);
+            localStorage.setItem("tokenUsuario", access);
+
+            console.log(response.data);
 
             alert("Login realizado com sucesso. Seja bem-vindo(a)!");
 
             navigate("/home");
         }
         catch(error) {
-            console.error("Erro ao realizar o login: ", error.response?.data);
-
             alert("Houve um erro no cadastro. Verifique seus dados.");
+            
+            console.error("Erro ao realizar o login: ", error.response?.data);
         }
     }
 
@@ -81,7 +84,7 @@ export function Login() {
                         <button type="submit" className="botao">Entrar</button>
                     </div>
                     <div className="cadastrar">
-                        <p>Ainda não tem conta? Cadastre-se <u onClick={paginaCadastro}>aqui!</u></p>
+                        <p>Ainda não tem conta? Cadastre-se <u onClick={() => paginaCadastro} style={{ cursor: "pointer" }}>aqui!</u></p>
                     </div>
                 </form>
             </section>
