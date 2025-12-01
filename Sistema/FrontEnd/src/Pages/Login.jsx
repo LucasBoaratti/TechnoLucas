@@ -59,11 +59,6 @@ export function Login() {
         }
     }
 
-    // Função que navega para a página de cadastro
-    function paginaCadastro() {
-        navigate("/cadastro");
-    }
-
     return (
         // Página de login
         <main className="paginaLogin">
@@ -84,7 +79,7 @@ export function Login() {
                         <button type="submit" className="botao">Entrar</button>
                     </div>
                     <div className="cadastrar">
-                        <p>Ainda não tem conta? Cadastre-se <u onClick={() => paginaCadastro} style={{ cursor: "pointer" }}>aqui!</u></p>
+                        <p>Ainda não tem conta? Cadastre-se <u onClick={() => navigate("/cadastro")} style={{ cursor: "pointer" }}>aqui!</u></p>
                     </div>
                 </form>
             </section>

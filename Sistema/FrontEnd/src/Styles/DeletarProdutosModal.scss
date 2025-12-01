@@ -1,0 +1,48 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilizando o modal de deletar produtos
+.containerModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(161, 161, 161, 0.8);
+
+    .modalDeletarProduto {
+        background-color: $cor-primaria;
+        padding: 30px;
+        height: auto;
+        color: $cor-fonte-clara;
+        border-radius: 25px;
+
+        .tituloEscolha {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .botoesEscolha {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+
+            .botaoEscolha {
+                background-color: $cor-botoes;
+                color: $cor-fonte-escura;
+                border: none;
+                border-radius: 15px;
+                width: 60px;
+                height: 30px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+    }
+}

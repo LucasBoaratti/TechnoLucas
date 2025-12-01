@@ -1,0 +1,67 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilização da página de gestão de estoque
+.paginaGestaoEstoque {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $cor-fonte-clara;
+
+    .tituloGestaoEstoque {
+        margin: 2.5rem 0;
+        font-size: 2.5rem;
+    }
+
+    .explicacaoGestaoEstoque {
+        font-size: 1.5625rem;
+        margin: 1.25rem 0;
+    }
+
+    .explicacaoTabela {
+        font-size: 1.5625rem;
+        margin: 1.25rem 0;
+    }
+
+    .tabelaProdutos {
+        width: 78.125rem;
+        border-collapse: collapse;
+        margin-top: 10px;
+        background-color: $cor-primaria;
+        padding: 15px;
+        color: $cor-fonte-clara;
+
+        .cabecalhoTabela {
+            font-size: 1.25rem;
+
+            th {
+                border: 2px solid white;
+                padding: 5px;
+                width: 56.25rem;
+                text-align: center;
+            }
+        }
+
+        .corpoTabela {
+            font-size: 1.125rem;
+
+            td {
+                padding: 5px;
+                border: 2px solid white;
+                text-align: center;
+                font-size: 1.125rem;
+            }
+
+            .acoes {
+                font-size: 1.5625rem;
+                padding: 5px;
+
+                i {
+                    font-size: 1.5625rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

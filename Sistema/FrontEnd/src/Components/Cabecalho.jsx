@@ -24,17 +24,13 @@ export function Cabecalho() {
                     <ul className="linksPaginas">
                         <li className="linkHome" onClick={() => navigate("/home")}>
                             <i class="bi bi-house-door-fill"></i>
-                            <p className="homeLink">Home</p>
+                            <p>Home</p>
                         </li>
                         <li className="linkProdutos" onClick={() => navigate("/produtos")}>
                             <i class="bi bi-box-seam-fill"></i>
                             <p>Produtos</p>
                         </li>
-                        <li className="historicos">
-                            <i class="bi bi-journal-text"></i>
-                            <p>Históricos</p>
-                        </li>
-                        <li className="movimentacoes">
+                        <li className="movimentacoes" onClick={() => navigate("/gestaoEstoque")}>
                             <i class="bi bi-shuffle"></i>
                             <p>Movimentações</p>
                         </li>

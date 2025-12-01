@@ -1,0 +1,163 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilizando a página de editar produtos
+.paginaEditarProdutos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .formularioProdutos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $cor-primaria;
+        margin: 5rem 0;
+        padding: 1.5625rem;
+        border-radius: 1.5625rem;
+        color: $cor-fonte-clara;
+
+        .tituloEditarProdutos {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .inputNome {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #nome {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .selectTipo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #tipo {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .inputQuantidade {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #quantidade {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .inputPreco {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #preco {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .inputDescricao {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #descricao {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .inputResponsavel {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #responsavel {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .botaoEditar {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.25rem;
+
+            .botao {
+                background-color: $cor-botoes;
+                border: none;
+                border-radius: 15px;
+                width: 4.375rem;
+                height: 1.875rem;
+                font-size: 1.125rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

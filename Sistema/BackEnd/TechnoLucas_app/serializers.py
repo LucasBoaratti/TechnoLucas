@@ -52,10 +52,39 @@ class CadastroUsuarioSerializer(serializers.ModelSerializer):
 
 # Serializer da tabela de produtos
 class ProdutosSerializer(serializers.ModelSerializer):
+    # Pegando o nome do responsável pelo ID do mesmo (campo de leitura)
+    responsavel_nome = serializers.CharField(source="responsavel.username", read_only=True)
+    # Campo de saída
+    responsavel_username = serializers.CharField(write_only=True, required=False)
+
     class Meta:
         model = Produtos
 
-        fields = "__all__"
+        fields = [
+            "id",
+            "nome",
+            "tipo",
+            "quantidade_estoque",
+            "preco",
+            "descricao",
+            "responsavel",
+            "responsavel_nome",
+            "responsavel_username",
+        ]
+        extra_kwargs = {
+            "responsavel": {
+                "read_only": True,
+            },
+        }
+
+    # Função que transforma o valor da chave primária (número) em string para o nome do usuário
+    def create(self, validated_data):
+        username = validated_data.pop("responsavel_username", None)
+        if username:
+            usuario = Usuarios.objects.get(username=username)
+            validated_data["responsavel"] = usuario
+        
+        return super().create(validated_data)
     
 # Serializer da tabela de históricos
 class HistoricoSerializer(serializers.ModelSerializer):
