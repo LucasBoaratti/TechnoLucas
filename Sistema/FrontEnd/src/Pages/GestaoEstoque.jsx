@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { MovimentacaoModal } from "../Components/MovimentacaoModal";
 
 export function GestaoEstoque() {
     // Estados de controle
     const [produtos, setProdutos] = useState([]);
+    const [produtoSelecionado, setProdutoSelecionado] = useState();
+    const [modal, setModal] = useState(false);
 
     // Função de produtos
-    async function getProdutos() {
+    async function getProdutosCriados() {
+        const token = localStorage.getItem("tokenUsuario");
+
         try {
             const response = await axios.get("http://127.0.0.1:8000/technolucas/produtos", {
                 headers: {
@@ -23,10 +28,11 @@ export function GestaoEstoque() {
     }
 
     useEffect(() => {
-        getProdutos();
+        getProdutosCriados();
     }, []);
-    // Página de gestão de estoque
+    
     return (
+        // Página de gestão de estoque
         <main>
             <section className="paginaGestaoEstoque">
                 <h1 className="tituloGestaoEstoque">Bem vindo(a) à gestão de estoque!</h1>
@@ -54,26 +60,16 @@ export function GestaoEstoque() {
                             <td>{produto.descricao}</td>
                             <td>{produto.responsavel_nome}</td>
                             <td className="acoes">
-                                <i className="bi bi-box-arrow-down" style={{ marginRight: "15px" }} onClick={() => {
-                                    // Passando as informações dos produtos para a página de edição de produtos
-                                    localStorage.setItem("idProduto", produto.id);
-                                    localStorage.setItem("nomeProduto", produto.nome);
-                                    localStorage.setItem("tipoProduto", produto.tipo);
-                                    localStorage.setItem("quantidadeProduto", produto.quantidade_estoque);
-                                    localStorage.setItem("precoProduto", produto.preco);
-                                    localStorage.setItem("descricaoProduto", produto.descricao);
-                                    localStorage.setItem("responsavelProduto", produto.responsavel);
-                                    navigate("/editarProdutos");
-                                }}></i>
-                                <i className="bi bi-box-arrow-in-down" onClick={() => {
-                                    localStorage.setItem("idProduto", produto.id);
-                                    setDeletarProdutoModal(true);
+                                <i className="bi bi-arrow-left-right" onClick={() => {
+                                    setProdutoSelecionado(produto);
+                                    setModal(true);
                                 }}></i>
                             </td>
                         </tr>
                     ))}
                     </tbody>
                 </table>
+                <MovimentacaoModal openModal={modal} closeModal={() => setModal(false)} getProdutos={getProdutosCriados} produtoSelecionado={produtoSelecionado}/>
             </section>
         </main>
     );

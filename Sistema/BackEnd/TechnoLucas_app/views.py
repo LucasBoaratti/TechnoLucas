@@ -68,6 +68,25 @@ class MovimentacoesLCAPIView(ListCreateAPIView):
 
     permission_classes = [IsAuthenticated]
 
+    # Função que atualiza a quantidade de produtos
+    def perform_create(self, serializer):
+        produto_id = self.request.data.get("produto") 
+        produto = Produtos.objects.get(id=produto_id)
+
+        serializer.save(
+            responsavel=self.request.user,  
+            produto=produto                 
+        )
+
+        movimentacao = serializer.instance
+
+        # Cálculo de produtos para a entrada e saída
+        if movimentacao.tipo_movimentacao == "Entrada":
+            produto.quantidade_estoque += movimentacao.quantidade_produtos
+        elif movimentacao.tipo_movimentacao == "Saida":
+            produto.quantidade_estoque -= movimentacao.quantidade_produtos
+        produto.save()
+
 # View para atualizar e deletar movimentações
 class MovimentacoesRUDAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Movimentacoes.objects.all()

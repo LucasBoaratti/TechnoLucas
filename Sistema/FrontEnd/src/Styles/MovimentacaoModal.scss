@@ -1,0 +1,89 @@
+// Importando as variáveis globais
+@use './Variaveis.scss' as *;
+
+// Estilizando o modal de entrada de produtos
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(161, 161, 161, 0.8);
+
+    .modalEntrada {
+        background-color: $cor-primaria;
+        padding: 1.875rem;
+        height: auto;
+        color: $cor-fonte-clara;
+        border-radius: 1.5625rem;
+
+        .tituloEntrada {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .inputQuantidade {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #quantidade {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .inputMovimentacao {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5625rem;
+
+            label {
+                font-size: 1.125rem;
+            }
+
+            #movimentacao {
+                height: 2.1875rem;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        .botoesEscolha {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3.75rem;
+            margin-top: 1.25rem;
+
+            .botoes {
+                background-color: $cor-botoes;
+                color: $cor-fonte-escura;
+                border: none;
+                border-radius: 15px;
+                width: 6.25rem;
+                height: 1.875rem;
+                font-size: 1.125rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

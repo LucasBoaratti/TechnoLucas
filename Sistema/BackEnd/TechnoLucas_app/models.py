@@ -18,7 +18,7 @@ tipoProduto = [
 tipoMovimentacao = [
     ("Selecione...", "Selecione..."),
     ("Entrada", "Entrada"),
-    ("Saída", "Saída"),
+    ("Saida", "Saida"),
 ]
 
 # ------------- Tabelas do banco -------------
