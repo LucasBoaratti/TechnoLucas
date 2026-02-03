@@ -84,7 +84,11 @@ class MovimentacoesLCAPIView(ListCreateAPIView):
         if movimentacao.tipo_movimentacao == "Entrada":
             produto.quantidade_estoque += movimentacao.quantidade_produtos
         elif movimentacao.tipo_movimentacao == "Saida":
+            # Verificando se a quantidade de estoque for menor que zero
+            if produto.quantidade_estoque - movimentacao.quantidade_produtos < 0:
+                raise ValueError("O estoque de produtos não pode ser menor que zero!")
             produto.quantidade_estoque -= movimentacao.quantidade_produtos
+
         produto.save()
 
 # View para atualizar e deletar movimentações
